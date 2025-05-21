@@ -2,12 +2,11 @@
     top: 0
     left: 0
     width: 100%
-    --pt: 32px
-    padding: var(--pt) 0 0
+    padding: 32px 66px
     position: relative
     z-index: 99999
-    padding: var(--pt) 0
     .container
+        max-width: 1920px
 
     .btn__menu
         display: none
@@ -19,33 +18,23 @@
         gap: 60px
         &__link
             padding: 10px
-            &:last-child
-                padding-right: 0
+
+    @media (max-width: 1500px)
+        padding: 24px 16px
+        .nav
+            gap: 30px
 
     @media (max-width: 1100px)
-        overflow: hidden
-        transition: all .3s ease
-        height: 93px
-        --pt: 25px
-        .container
-            transition: inherit
-
-        &.active
-            background-color: rgba(0, 0, 0, .5)
-            height: 100vh
-            .container
-                border-radius: 30px
-
+        padding: 12px 6px
         .btn__menu
             display: block
-            width: 48px
-            height: 48px
+            width: 32px
+            height: 32px
             position: relative
-
             &::before,
             &::after
                 content: ''
-                transition: inherit
+                transition: all .3s ease
                 display: block
                 margin: 0 auto
                 height: 3px
@@ -58,7 +47,6 @@
                 background-color: $black
 
             &::after
-                width: 26px
                 top: calc(50% + 4.5px)
 
             &.active
@@ -73,34 +61,82 @@
 
         .nav
             position: absolute
-            z-index: 1
-            width: calc( 100% - 15px )
-            top: calc( var(--pt) - 5px )
+            z-index: 11
+            transition: all .3s ease
+            width: 100%
+            top: 100%
             right: 0
-            transition: inherit
-            background-color: #FAFAFA
+            text-align: center
+            background-color: #fff
             opacity: 0
+            overflow: hidden
+            height: calc( 100svh - 56px )
             visibility: hidden
-            border-radius: 20px 0 0 20px
-            transform: translateX(20%)
+            transform: translateY(20%)
             display: block
-            padding: 123px 20px 93px
+            padding: 50px 20px
+            &::before
+                content: ''
+                display: block
+                width: 100%
+                min-width: 733px
+                position: absolute
+                bottom: 0
+                left: 50%
+                transform: translateX(-50%)
+                z-index: -11
+                height: 50%
+                background-repeat: no-repeat
+                background-position: center bottom
+                background-image: url('../img/menu__bg.jpg')
+                pointer-events: none
+                opacity: 0
+                transition: .3s ease all
+                transform: translateY(50px) translateX(-50%)
+
             &__link
                 display: block
-                font-size: 26px
-                padding: 12px 0
+                font-size: 24px
+                padding: 30px 0
                 line-height: 100%
-                color: #757E92
+
+                opacity: 0
+                transform: translateY(50px)
 
             &.active
                 opacity: 1
                 visibility: visible
-                transform: translateX(0)
+                transform: translateY(0)
+                &::before
+                    opacity: 1
+                    transform: translateY(0px) translateX(-50%)
+                    transition-delay: .5s
+
+                .nav__link
+                    opacity: 1
+                    transform: translateY(0px)
+                    &:nth-child(1)
+                        transition-delay: .2s
+                    &:nth-child(2)
+                        transition-delay: .3s
+                    &:nth-child(3)
+                        transition-delay: .4s
+                    &:nth-child(4)
+                        transition-delay: .5s
 
     @media (max-width: 720px)
 
+
 .logo
+    display: block
     position: relative
     z-index: 100
+    max-width: 186px
     img
-        max-width: 186px
+        width: 100%
+
+    @media (max-width: 1500px)
+        max-width: 166px
+
+    @media (max-width: 1100px)
+        max-width: 124px

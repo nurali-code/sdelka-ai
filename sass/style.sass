@@ -5,13 +5,14 @@
 
 .hero
     text-align: center
-    padding-top: 60px 0 120px
+    padding: 60px 0 120px
     overflow: hidden
     &__title
         margin-bottom: 20px
 
     &__descr
         max-width: 850px
+        line-height: 140%
         margin: 0 auto 60px
 
     &__btns
@@ -20,7 +21,7 @@
 
     &__list
         text-align: center
-        gap: 80px
+        gap: 5rem
         b
             color: $black
             font-weight: 600
@@ -32,42 +33,46 @@
             display: block
 
     &__item
-        min-width: 380px
+        margin: 0 auto
 
-    @media screen and ( max-width: 1500px )
-        &__title
-            font-size: 54px
-
-    @media screen and ( max-width: 1300px )
-        .container
-            border: none
-
-    @media screen and ( max-width: 992px )
-        &__title
-            font-size: 46px
-
-    @media screen and ( max-width: 720px )
+    @media screen and ( max-width: 1600px )
+        &__item
+            // min-width: 300px
 
         &__descr
-            margin-bottom: 25px
+            margin-bottom: 50px
+
+        &__btns
+            margin-bottom: 80px
+
+    @media screen and ( max-width: 992px )
+        padding: 50px 0 90px
+
+        &__list
+            gap: 3.75rem
+
+        &__descr
+            margin-bottom: 40px
+
+        &__item
+            b
+                font-size: 64px
+
+    @media screen and ( max-width: 720px )
+        padding: 40px 0 80px
+
+        &__list 
+            gap: 40px
 
         &__btns
             margin-bottom: 50px
 
-    @media screen and ( max-width: 370px )
-        &__title
-            font-size: 36px
 
 .faq
-    padding: 0
     &__text
         display: none
         max-width: 90%
         padding-bottom: 20px
-
-    .container
-        &.--lg
-            padding: 110px 15px
 
     &-item
         max-width: 1400px
@@ -80,24 +85,20 @@
             margin-bottom: 0
 
         &.active
-            border-radius: 60px 60px 20px 20px
+            border-radius: 20px 60px 20px 20px
             .faq__text
                 display: block
 
     &__heading
-        font-family: 'Mulish', sans-serif
-        font-weight: 700
-        font-size: 28px
-        line-height: 120%
-
         position: relative
         z-index: 1
-        padding: 34px 42px 34px 0
+        padding: 34px 72px 34px 0
         margin: 0
         width: 100%
         text-align: left
         text-wrap: stable
         color: #23304C
+        cursor: pointer
         &::after
             width: 60px
             height: 60px
@@ -121,17 +122,21 @@
                 transform: scaleY(-1) translateY(-50%)
 
     @media screen and ( max-width: 992px )
-        padding: 35px 0
-        .container
-            &.--lg
-                border: none
-                padding: 0
 
         &-item
-            padding: 10px 20px
+            padding: 12px 12px 12px 24px
+            border-radius: 36px
+            &.active
+                border-radius: 12px 36px 12px 12px
+
+        &__text 
+            padding-bottom: 0
 
         &__heading
+            padding: 7px 45px 7px 0
             line-height: 130%
-            padding: 10px 73px 10px 0
+            &::after
+                width: 40px
+                height: 40px
 
 @import 'footer'

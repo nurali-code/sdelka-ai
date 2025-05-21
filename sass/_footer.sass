@@ -2,13 +2,15 @@
     margin-top: auto
     padding: 120px 0 40px
     &__top
+        gap: 30px
         margin-bottom: 120px
 
-    &__bottom 
+    &__bottom
+        gap: 40px
         .fx-ac
-            gap: 40px 
+            gap: 40px
 
-    &__link 
+    &__link
         color: #717684
         text-decoration: underline
 
@@ -16,7 +18,43 @@
         gap: 60px
         &__link
             padding: 10px
-            &:last-child
-                padding-right: 0
 
+    @media screen and ( max-width: 992px )
+        padding: 80px 0 40px
 
+        &__top
+            margin-bottom: 70px
+
+            &__top,
+            &__bottom,
+            .nav
+                justify-content: center
+
+    @media screen and ( max-width: 720px )
+        padding: 60px 0 20px
+        .logo
+            margin: 0 auto 30px
+        .nav
+            text-align: center
+            width: 100%
+            &__link
+                display: block
+                width: fit-content
+                margin: 0 auto 
+                min-width: 140px
+
+        .fx-ac
+            width: 100%
+            display: block
+
+        &__bottom
+            text-align: center
+            p
+                margin-bottom: 40px
+
+            a
+                display: block
+                width: fit-content
+                margin: 0 auto 12px
+                &:last-child
+                    margin-bottom: 0
