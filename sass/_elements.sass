@@ -1,0 +1,226 @@
+*
+    padding: 0
+    margin: 0
+    box-sizing: border-box
+    border: none
+    outline: none
+
+:root
+    --prime: #124BF6
+    --white: #fff
+    --black: #2B2D32
+    --dark: #0D1321
+    --green: #25A163
+    --red: #E61717
+    --bg: #fff
+    --cont: 1400px
+
+$alfa: rgba(0, 0, 0, 0)
+$prime: var(--prime)
+$prime-2: var(--prime-2)
+$black: var(--black)
+$dark: rgb(var(--dark))
+$white: var(--white)
+$green: var(--green)
+$red: var(--red)
+$bg: var(--bg)
+
+html
+    scroll-behavior: smooth
+
+body, html
+    font-family: "Nunito Sans", sans-serif
+    font-weight: 400
+    font-style: normal
+    font-optical-sizing: auto
+    background-color: $bg
+    color: $black
+
+body
+    min-height: 100vh
+    position: relative
+    z-index: 1
+    &.is_active
+        overflow: hidden
+
+.container
+    max-width: var(--cont)
+    width: calc( 100% - 30px )
+    margin: 0 auto
+
+h1, h2, h3, h4, h5, h6
+    font-family: 'Mulish', sans-serif
+    font-weight: 400
+    margin: 0 0 20px
+
+img
+    display: block
+    max-width: 100%
+
+h3,.h3
+    font-weight: 500
+    font-size: 22px
+    line-height: 145%
+
+h2,.h2,
+h1,.h1
+    text-align: center
+    font-weight: 900
+    font-size: 56px
+    line-height: 100%
+    letter-spacing: -.5px
+    text-transform: uppercase
+    margin-bottom: 80px
+
+.c
+    &-gray
+        color: #565E70
+
+a,
+button,
+p
+    font-family: inherit
+    font-weight: 600
+    font-size: 20px
+    line-height: 120%
+    letter-spacing: -.4px
+    color: $black
+
+p
+    color: #717684
+    &:last-child
+        margin-bottom: 0
+
+a,
+button
+    text-decoration: none
+    transition: all ease .3s
+    background-color: transparent
+    &:hover
+        opacity: .5
+
+    &:active
+        opacity: 1
+        transform: scale(.98)
+
+.btn
+    font-weight: 600
+    font-size: 20px
+    line-height: 120%
+    letter-spacing: -.4px
+
+    text-align: center
+    color: $white
+
+    text-align: center
+
+    gap: 10px
+    min-width: 238px
+    width: fit-content
+    border-radius: 40px
+    padding: 20px 32px
+    text-align: center
+    background-color: $prime
+
+    &:active
+        opacity: 1
+
+    &-2
+        background-color: rgba(0, 0, 0, 0)
+        border: 1px solid $prime
+        color: $prime
+
+    &:disabled
+        background-color: #E7E7F0
+        cursor: progress
+
+.w-full
+    width: 100% !important
+
+ul
+    list-style: none
+
+[class^=fx-], [class*=" fx-"], .btn, body, .fx
+    display: flex
+
+.fx-col, body
+    flex-direction: column
+
+.fx-jc, .btn
+    justify-content: center
+
+.fx-ac, .btn
+    align-items: center
+
+.fx
+
+    &-je
+        justify-content: flex-end
+
+    &-w
+        flex-wrap: wrap
+
+    &-as
+        align-items: flex-start
+
+    &-jb
+        justify-content: space-between
+
+    &-ae
+        align-items: end
+
+label
+    display: block
+    line-height: 100%
+
+input
+    border: 1px solid $black
+    height: 68px
+    width: 100%
+    font-weight: normal
+    padding: 0 14px
+    background-color: $white
+    font-size: 16px
+    &:focus
+        border-color: $black
+
+    &::placeholder
+        color: #9E9EAB
+
+.ic
+    width: 20px
+    height: 20px
+    vertical-align: middle
+
+.tb
+    @media screen and ( max-width: 1300px )
+        &-hide
+            display: none
+    @media screen and ( min-width: 1300px )
+        &-show
+            display: none
+
+.mob
+    @media screen and ( max-width: 720px )
+        &-hide
+            display: none
+    @media screen and ( min-width: 720px )
+        &-show
+            display: none
+
+section
+    overflow: hidden
+    padding: 60px 0
+    @media screen and ( max-width: 1300px )
+        padding: 35px 0
+
+@media screen and ( max-width: 1600px )
+    :root
+        --cont: 1220px
+        --cont-lg: 1300px
+
+@media screen and ( max-width: 992px )
+    .h2, h2
+        font-size: 40px
+        line-height: 115%
+        margin-bottom: 40px

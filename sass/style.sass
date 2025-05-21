@@ -1,0 +1,137 @@
+@import 'normolize'
+@import 'elements'
+@import 'slick'
+@import 'header'
+
+.hero
+    text-align: center
+    padding-top: 60px 0 120px
+    overflow: hidden
+    &__title
+        margin-bottom: 20px
+
+    &__descr
+        max-width: 850px
+        margin: 0 auto 60px
+
+    &__btns
+        gap: 21px
+        margin-bottom: 100px
+
+    &__list
+        text-align: center
+        gap: 80px
+        b
+            color: $black
+            font-weight: 600
+            font-size: 96px
+            line-height: 110%
+            text-transform: uppercase
+
+        b, span
+            display: block
+
+    &__item
+        min-width: 380px
+
+    @media screen and ( max-width: 1500px )
+        &__title
+            font-size: 54px
+
+    @media screen and ( max-width: 1300px )
+        .container
+            border: none
+
+    @media screen and ( max-width: 992px )
+        &__title
+            font-size: 46px
+
+    @media screen and ( max-width: 720px )
+
+        &__descr
+            margin-bottom: 25px
+
+        &__btns
+            margin-bottom: 50px
+
+    @media screen and ( max-width: 370px )
+        &__title
+            font-size: 36px
+
+.faq
+    padding: 0
+    &__text
+        display: none
+        max-width: 90%
+        padding-bottom: 20px
+
+    .container
+        &.--lg
+            padding: 110px 15px
+
+    &-item
+        max-width: 1400px
+        transition: all ease .3s
+        margin: 0 auto 10px
+        padding: 0 32px
+        background-color: #F9FAFB
+        border-radius: 60px
+        &:last-child
+            margin-bottom: 0
+
+        &.active
+            border-radius: 60px 60px 20px 20px
+            .faq__text
+                display: block
+
+    &__heading
+        font-family: 'Mulish', sans-serif
+        font-weight: 700
+        font-size: 28px
+        line-height: 120%
+
+        position: relative
+        z-index: 1
+        padding: 34px 42px 34px 0
+        margin: 0
+        width: 100%
+        text-align: left
+        text-wrap: stable
+        color: #23304C
+        &::after
+            width: 60px
+            height: 60px
+            border-radius: 50%
+            background-repeat: no-repeat
+            background-position: center center
+            background-image: url('../img/arr_d.svg')
+            content: ''
+            display: block
+            font-weight: normal
+            position: absolute
+            top: 50%
+            right: 0
+            transform: translateY(-50%)
+            transition: all ease .3s
+            transform-origin: 50% 0%
+
+        &.active
+            opacity: 1
+            &:after
+                transform: scaleY(-1) translateY(-50%)
+
+    @media screen and ( max-width: 992px )
+        padding: 35px 0
+        .container
+            &.--lg
+                border: none
+                padding: 0
+
+        &-item
+            padding: 10px 20px
+
+        &__heading
+            line-height: 130%
+            padding: 10px 73px 10px 0
+
+@import 'footer'
