@@ -36,6 +36,8 @@ body, html
     font-optical-sizing: auto
     background-color: $bg
     color: $black
+    &.active
+        overflow: hidden
 
 body
     min-height: 100vh
@@ -200,6 +202,10 @@ input
     @media screen and ( min-width: 720px )
         &-show
             display: none
+
+mark 
+    color: $prime
+    background-color: rgba(0, 0, 0, 0)
 
 .tag
     display: block

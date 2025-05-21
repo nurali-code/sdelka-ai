@@ -1,49 +1,8 @@
 // Меню бургер
-document.querySelector('.btn__menu').addEventListener('click', function () {
-    this.classList.toggle('active');
-    document.querySelector('.header .nav').classList.toggle('active');
-    document.querySelector('.header').classList.toggle('active');
+$('.btn__menu').on('click', function () {
+    $(this).toggleClass('active');
+    $('.header .nav, body').toggleClass('active');
 });
-
-// function _clear(el, props) {
-//     props.forEach(p => el.style.removeProperty(p));
-// }
-
-// function slideUp(el, d = 400) {
-//     el.style.height = el.offsetHeight + 'px';
-//     el.style.transition = `height ${d}ms, margin ${d}ms, padding ${d}ms`;
-//     el.style.overflow = 'hidden';
-//     el.offsetHeight;
-//     ['height', 'padding-top', 'padding-bottom', 'margin-top', 'margin-bottom']
-//         .forEach(p => (el.style[p] = 0));
-//     setTimeout(() => {
-//         el.style.display = 'none';
-//         _clear(el, ['height', 'padding-top', 'padding-bottom', 'margin-top', 'margin-bottom', 'overflow', 'transition']);
-//     }, d);
-// }
-
-// function slideDown(el, d = 400) {
-//     el.style.display = '';
-//     let display = getComputedStyle(el).display;
-//     if (display === 'none') display = 'block';
-//     el.style.display = display;
-//     const h = el.offsetHeight;
-//     el.style.overflow = 'hidden';
-//     ['height', 'padding-top', 'padding-bottom', 'margin-top', 'margin-bottom']
-//         .forEach(p => (el.style[p] = 0));
-//     el.offsetHeight;
-//     el.style.transition = `height ${d}ms, margin ${d}ms, padding ${d}ms`;
-//     el.style.height = h + 'px';
-//     setTimeout(() => {
-//         _clear(el, ['height', 'overflow', 'transition']);
-//     }, d);
-// }
-
-// function slideToggle(el, d = 400) {
-//     getComputedStyle(el).display === 'none'
-//         ? slideDown(el, d)
-//         : slideUp(el, d);
-// }
 
 // FAQ аккордеон
 $('.faq__heading').on('click', function () {
@@ -54,21 +13,44 @@ $('.faq__heading').on('click', function () {
     parent.toggleClass('active');
 });
 
-$('.capability__list').slick({
-    dots: true,
+$('.live__slider').slick({
+    dots: false,
     arrows: false,
     infinite: false,
-    cennterPadding: '15px',
+    cennterPadding: '0',
     speed: 300,
-    variableWidth: true,
-    slidesToShow: 1,
-    rows: 6,
+    slidesToShow: 2,
+    asNavFor: '.live__navbar',
     slidesToScroll: 1,
-    mobileFirst: true,
     responsive: [
         {
-            breakpoint: 1100,
-            settings: "unslick"
+            breakpoint: 720,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+            }
+        },
+    ]
+});
+$('.live__navbar').slick({
+    dots: true,
+    arrows: false,
+    infinite: true,
+    speed: 300,
+    centerMode: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    cennterPadding: '0px',
+    variableWidth: true,
+    asNavFor: '.live__slider',
+    focusOnSelect: true,
+    responsive: [
+        {
+            breakpoint: 1200,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+            }
         },
     ]
 });
