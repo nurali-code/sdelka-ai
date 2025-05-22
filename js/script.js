@@ -54,3 +54,26 @@ $('.live__navbar').slick({
         },
     ]
 });
+$('.reviews__slider').slick({
+    dots: true,
+    arrows: false,
+    infinite: true,
+    speed: 300,
+    centerMode: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    swipeToSlide: true,
+    cennterPadding: '0px',
+    variableWidth: true,
+    asNavFor: '.live__slider',
+    focusOnSelect: true,
+    responsive: [
+        {
+            breakpoint: 1200,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+            }
+        },
+    ]
+});

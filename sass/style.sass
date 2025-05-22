@@ -109,11 +109,11 @@
 
 .live
     text-align: center
-    &__heading 
+    &__heading
         margin-bottom: 40px
-    &__descr 
+    
+    &__descr
         margin: 0 0 80px
-
 
     &__slider
         max-width: 1060px
@@ -122,6 +122,8 @@
     &__slide
         margin: 0 30px
         img
+            display: block 
+            margin: 0 auto 
             border: 2px solid #E5E7EB
             border-radius: 20px
 
@@ -144,9 +146,9 @@
             color: $prime
 
     @media screen and ( max-width: 1200px )
-        &__heading 
+        &__heading
             margin-bottom: 20px
-        &__descr 
+        &__descr
             margin-bottom: 40px
         &__slider
             margin-bottom: 20px
@@ -154,10 +156,64 @@
         &__slide
             margin: 0 10px
 
+.reviews
+    background-color: #F9FAFB
+    &__slider
+        gap: 20px
 
+    .slick
+        &-dots
+            margin-top: 40px
+        //     gap: 0
+        //     li
+        //         padding: 0
 
+        //     button
+        //         border-radius: 4px
+        //         height: 6px
+        //         transform: none
+        //         width: 45px
+        //         opacity: 1
+        //         background-color: #E2E2E4
 
-        
+        //     .slick-active button
+        //         opacity: 1
+        //         background-color: $prime
+
+.review
+    max-width: 500px
+    padding: 20px
+    border-radius: 20px
+    background-color: #fff
+    margin: 0 10px
+    &__header
+        gap: 15px
+        margin-bottom: 45px
+
+    &__heading
+        margin: 0 0 4px
+        color: $black
+
+    &__img
+        min-width: 60px
+        width: 60px
+        height: 60px
+        border-radius: 8px
+        background-color: #E0E0E0
+
+    &__city
+        font-size: 14px
+        color: $prime
+        line-height: 24px
+        text-transform: uppercase
+
+    &__text
+        color: $black
+        padding-top: 32px
+        background-repeat: no-repeat
+        background-position: top left
+        background-image: url('../img/qu.svg')
+        margin: 0
 
 .faq
     &__text
