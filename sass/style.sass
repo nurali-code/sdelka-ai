@@ -361,7 +361,32 @@
 
     p
         max-width: 502px
+        color: $black
         margin: 0 0 96px
+
+    @media screen and ( max-width: 1600px )
+        background-position: center right, center center
+        h2
+            max-width: 770px
+
+    @media screen and ( max-width: 992px )
+        h2
+            max-width: 550px
+
+        p
+            max-width: 400px
+
+    @media screen and ( max-width: 720px )
+        padding: 40px 0 23px
+        background-position: center right, center center
+        background-size: 60% auto, cover
+        h2 
+            margin-bottom: 12px
+        p 
+            margin-bottom: 52.7vw
+
+        .btn 
+            width: 100%
 
 .faq
     &__text
