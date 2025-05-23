@@ -63,16 +63,21 @@ $('.reviews__slider').slick({
     slidesToShow: 3,
     slidesToScroll: 1,
     swipeToSlide: true,
-    cennterPadding: '0px',
+    cennterPadding: '14px',
     variableWidth: true,
-    asNavFor: '.live__slider',
-    focusOnSelect: true,
     responsive: [
         {
             breakpoint: 1200,
             settings: {
+                variableWidth: false,
+                slidesToShow: 2,
+            }
+        },
+        {
+            breakpoint: 720,
+            settings: {
+                variableWidth: false,
                 slidesToShow: 1,
-                slidesToScroll: 1
             }
         },
     ]

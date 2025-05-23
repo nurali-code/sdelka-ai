@@ -111,7 +111,7 @@
     text-align: center
     &__heading
         margin-bottom: 40px
-    
+
     &__descr
         margin: 0 0 80px
 
@@ -122,8 +122,8 @@
     &__slide
         margin: 0 30px
         img
-            display: block 
-            margin: 0 auto 
+            display: block
+            margin: 0 auto
             border: 2px solid #E5E7EB
             border-radius: 20px
 
@@ -159,6 +159,7 @@
 .reviews
     background-color: #F9FAFB
     &__slider
+        position: static !important
         gap: 20px
 
     .slick
@@ -179,6 +180,13 @@
         //     .slick-active button
         //         opacity: 1
         //         background-color: $prime
+
+        @media screen and ( max-width: 1200px )
+            &-list
+                padding: 0 7px !important
+
+            &-slide
+                margin: 0 7px
 
 .review
     max-width: 500px
@@ -214,6 +222,146 @@
         background-position: top left
         background-image: url('../img/qu.svg')
         margin: 0
+
+    @media screen and ( max-width: 1200px )
+        max-width: unset
+        &__header
+            margin-bottom: 32px
+
+        &__img
+            min-width: 48px
+            width: 48px
+            height: 48px
+
+        &__city
+            font-size: 12px
+            letter-spacing: 1.3px
+
+.tariffs
+    background-repeat: no-repeat
+    background-position: center center
+    background-image: url('../img/tariffs__bg.svg')
+    &__wrap
+        gap: 40px
+        &>*
+            width: calc( (100% - 80px) / 3 )
+
+    &__tag
+        font-weight: 500
+        font-size: 14px
+        line-height: 18px
+        text-align: center
+        padding: 6px 20px
+        border-radius: 50px
+        color: $prime
+        background-color: #DBE4FF
+        position: absolute
+        top: 29px
+        right: 24px
+
+    &__heading
+        margin: 0 0 4px
+
+    &__descr
+        font-size: 14px
+        color: $prime
+        letter-spacing: 1.7px
+        text-transform: uppercase
+        margin: 0 0 20px
+
+    &__price
+        font-size: 40px
+        line-height: 100%
+        margin-bottom: 32px
+        span
+            color: #717684
+            font-size: 20px
+            vertical-align: middle
+
+    &__info
+        margin: 60px 0 20px
+        font-weight: 500
+        font-size: 14px
+        line-height: 18px
+        text-align: center
+
+    &__list
+        margin-bottom: auto
+        li
+            padding-left: 36px
+            background-repeat: no-repeat
+            background-position: left center
+            background-image: url('../img/check.svg')
+            margin: 0 0 20px
+            &:last-of-type
+                margin-bottom: 0
+
+    &__item
+        padding: 24px
+        position: relative
+        z-index: 1
+        border-radius: 20px
+        background-color: #fff
+        &:last-child
+            background-repeat: no-repeat
+            background-position: top right
+            background-size: 36% auto
+            background-image: url('../img/tariffs__ic.png')
+
+        .btn
+            margin-top: 20px
+            width: 100%
+
+    @media screen and ( max-width: 1200px )
+        .container
+            max-width: 780px
+
+        &__wrap
+            gap: 20px
+            &>*
+                width: calc( (100% - 20px) / 2 )
+
+        &__price
+            font-size: 24px
+            span
+                font-size: 1rem
+
+        &__descr
+            font-size: 0.75rem
+            margin-bottom: 1rem
+
+        &__list
+            margin-bottom: 2rem
+
+        &__item
+            display: block
+            .btn
+                margin-top: auto
+
+    @media screen and ( max-width: 720px )
+        &__wrap
+            gap: 12px
+            &>*
+                width: 100%
+
+        &__list
+            margin-bottom: 70px
+
+.clients
+    padding: 60px 0
+    background-repeat: no-repeat
+    background-position: top right, center center
+    background-size: 37% auto, cover
+    background-image: url('../img/clients__ic.png'), url('../img/clients__bg.jpg')
+    text-align: left
+    h2
+        text-align: left
+        max-width: 987px
+        margin: 0 0 20px
+
+    p
+        max-width: 502px
+        margin: 0 0 96px
 
 .faq
     &__text
