@@ -36,8 +36,8 @@ scrollChatToBottom();
 $('.faq__heading').on('click', function () {
     const parent = $(this).closest('.faq-item');
     $('.faq__heading').not(this).removeClass('active').next().slideUp(300);
-    $('.faq-item').not(parent).removeClass('active');
     $(this).toggleClass('active').next().slideToggle(300);
+    setTimeout(() => {$('.faq-item').not(parent).removeClass('active');}, 300);
     parent.toggleClass('active');
 });
 
