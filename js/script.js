@@ -4,6 +4,13 @@ $('.btn__menu').on('click', function () {
     $('.header .nav, body').toggleClass('active');
 });
 
+function scrollChatToBottom() {
+    const chatBody = document.querySelector('.chat__body');
+    if (chatBody) { chatBody.scrollTop = chatBody.scrollHeight; }
+}
+scrollChatToBottom();
+
+
 // FAQ аккордеон
 $('.faq__heading').on('click', function () {
     const parent = $(this).closest('.faq-item');
