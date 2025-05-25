@@ -1,7 +1,28 @@
 // Меню бургер
-$('.btn__menu').on('click', function () {
+$('.btn__menu, header .nav__link').on('click', function () {
     $(this).toggleClass('active');
     $('.header .nav, body').toggleClass('active');
+});
+
+function animateNumber(element, to, duration = 3000) {
+    let start = 0;
+    let startTime = null;
+
+    function animate(currentTime) {
+        if (!startTime) startTime = currentTime;
+        const progress = Math.min((currentTime - startTime) / duration, 1);
+        const value = Math.floor(progress * (to - start) + start);
+        $(element).text(value.toLocaleString('ru-RU'));
+        if (progress < 1) {
+            requestAnimationFrame(animate);
+        }
+    }
+    requestAnimationFrame(animate);
+}
+
+$('.hero__item-num').each(function () {
+    const n = parseInt($(this).data('anim'), 10);
+    animateNumber(this, n, 3000);
 });
 
 function scrollChatToBottom() {

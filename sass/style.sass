@@ -113,101 +113,17 @@
             &>*
                 width: 100% !important
 
-.chat
-    width: 560px
-    border-radius: 20px
-    overflow: hidden
-    background-color: #fff
-    &__header
-        gap: 12px
-        background-color: #fff
-        padding: 12px 20px
-        box-shadow: 0px 0px 20px 0px #5B637114
+    @media screen and ( max-width: 720px )
+        &__title
+            padding: 20px 20px 49.392vw
+            border-radius: 12px
 
-    &__ic
-        min-width: 60px
-        height: 60px
-        border-radius: 12px
-        width: 60px
-        background-color: #eee
+        &__heading
+            font-size: 24px
+            line-height: 120%
+            margin-bottom: 12px
 
-    &__name
-        font-weight: 600
-        font-size: 20px
-        line-height: 100%
-        letter-spacing: -.3px
-        margin: 0 0 4px
-
-    &__descr
-        font-weight: 400
-        font-size: 16px
-        line-height: 100%
-        letter-spacing: -.5px
-
-    &__title
-        flex: 1
-
-    &__btns
-        gap: 20px
-
-    &__btn
-        width: 40px
-        height: 40px
-
-    &__body
-        flex: 1
-        gap: 26px
-        padding: 42px 20px
-        min-height: 428px
-        max-height: 428px
-        overflow-y: scroll
-
-    &__date
-        font-weight: 500
-        font-size: 14px
-        line-height: 100%
-        letter-spacing: -1px
-
-    &__footer
-        position: relative
-        z-index: 1
-        background-color: #fff
-        margin-top: auto
-        padding: 12px 20px
-        box-shadow: 0px 0px 20px 0px #5B637114
-        button
-            width: 51px
-            text-align: right
-            img
-                margin-left: auto
-
-    &__text
-        width: fit-content
-        border-radius: 30px
-        padding: 12px
-        font-weight: 400
-        font-size: 18px
-        line-height: 100%
-        letter-spacing: -1px
-
-    &__item
-        width: 100%
-        margin: 0
-        gap: 8px
-        position: relative
-        z-index: 1
-        &>*
-            display: inline-block
-
-        &.--send
-            .chat__text
-                background-color: #F2F1F0
-
-        &.--get
-            justify-content: flex-start
-            flex-direction: row-reverse
-            .chat__text
-                background-color: #E6F6FF
+@import 'chat'
 
 .how
     &__wrap
@@ -405,9 +321,9 @@
         margin: 0 0 4px
 
     &__descr
-        font-size: 14px
+        font-size: 0.87rem
         color: $prime
-        letter-spacing: 1.7px
+        letter-spacing: calc( 0.87rem * 0.12 )
         text-transform: uppercase
         margin: 0 0 20px
 
@@ -520,12 +436,13 @@
 
     @media screen and ( max-width: 720px )
         padding: 40px 0 23px
-        background-position: center right, center center
-        background-size: 60% auto, cover
+        background-position: center right -5vw, center center
+        background-size: 89% auto,cover
         h2
             margin-bottom: 12px
+        
         p
-            margin-bottom: 52.7vw
+            margin-bottom: 84.7vw
 
         .btn
             width: 100%

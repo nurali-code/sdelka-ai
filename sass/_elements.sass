@@ -66,6 +66,7 @@ h3,.h3
     font-size: 1.75rem
     color: $black
     line-height: 120%
+    letter-spacing: calc( 1.75rem * -0.01 )
 
 h2,.h2,
 h1,.h1
@@ -73,7 +74,7 @@ h1,.h1
     font-weight: 900
     font-size: 3.5rem
     line-height: 125%
-    letter-spacing: -.5px
+    letter-spacing: calc( 3.5rem * -0.01 )
     text-transform: uppercase
     margin-bottom: 80px
 
@@ -86,7 +87,7 @@ a, button, p, ul, ol
     font-weight: 600
     font-size: var(--fz)
     line-height: 130%
-    letter-spacing: -.025rem
+    letter-spacing: calc( var(--fz) * -0.02 )
     color: $black
 
 p
@@ -177,9 +178,10 @@ label
 
 input
     font-weight: 500
-    font-size: 20px
-    line-height: 100%
-    letter-spacing: -.3px
+    --fz: 20px
+    font-size: var(--fz)
+    line-height: 110%
+    letter-spacing: calc( var(--fz) * -0.02 )
 
     border: 2px solid #80D4FF
     height: 64px
@@ -272,10 +274,11 @@ section
 @media screen and ( max-width: 720px )
     h3, .h3
         font-size: 1.25rem
+        letter-spacing: calc( 1.25rem * -0.01 )
 
     .h2, h2, h1, .h1
         font-size: 1.3125rem
-        letter-spacing: -0.3px
+        letter-spacing: calc( 1.3125rem * -0.01 )
         margin-bottom: 3.75rem
 
     .tag
@@ -283,3 +286,8 @@ section
         &__wrap
             display: block
             gap: 12px
+
+    input
+        height: 43px
+        --fz: 16px
+        border-radius: 12px
