@@ -49,7 +49,7 @@
             &::after
                 top: calc(50% + 4.5px)
 
-            &.active
+            &.tab_active
                 &::before,
                 &::after
                     top: 50%
@@ -101,16 +101,16 @@
                 line-height: 100%
 
                 opacity: 0
-                transform: translateY(50px)
+                transform: translateY(100%)
 
-            &.active
+            &.tab_active
                 opacity: 1
                 visibility: visible
                 transform: translateY(0)
                 &::before
                     opacity: 1
                     transform: translateY(0px) translateX(-50%)
-                    transition-delay: .5s
+                    transition-delay: .6s
 
                 .nav__link
                     opacity: 1

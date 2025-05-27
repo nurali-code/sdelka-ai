@@ -85,8 +85,10 @@
         padding-bottom: 360px
         background-repeat: no-repeat
         background-size: 76% auto
-        background-position: left bottom
+        background-position: left bottom -1px
         background-image: url('../img/check__bg.jpg')
+        p
+            line-height: 140%
 
     &__heading
         font-weight: 700
@@ -179,11 +181,17 @@
 
     &__slide
         margin: 0 30px
+        border-radius: 20px
+        overflow: hidden
+        border: 2px solid #E5E7EB
         img
+            width: 100%
             display: block
             margin: 0 auto
-            border: 2px solid #E5E7EB
-            border-radius: 20px
+
+    &__body
+        max-height: 500px
+        overflow-y: scroll
 
     &__navbar
         .slick
@@ -194,7 +202,7 @@
         font-weight: 600
         font-size: 0.875rem
         letter-spacing: calc( 0.875rem * 0.12 )
-        line-height: 24px
+        line-height: 120%
         margin: 0 20px
         opacity: 0
         transition: opacity .3s ease
@@ -215,6 +223,18 @@
             position: relative
         &__slide
             margin: 0 10px
+
+        &__body
+            max-height: 412px
+
+    @media screen and ( max-width: 720px )
+        &__nav
+            width: calc( 100vw - 28px )
+            font-size: 0.75rem
+            letter-spacing: calc( 0.75rem * 0.12 )
+
+        &__body
+            max-height: 312px
 
 .reviews
     background-color: #F9FAFB
@@ -440,13 +460,13 @@
 
     @media screen and ( max-width: 720px )
         padding: 40px 0 23px
-        background-position: center right -5vw, center center
-        background-size: 89% auto,cover
+        background-position: top 62% right -8vw,center center
+        background-size: 102% auto, cover
         h2
             margin-bottom: 12px
 
         p
-            margin-bottom: 84.7vw
+            margin-bottom: 80.7vw
 
         .btn
             width: 100%

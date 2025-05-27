@@ -1,7 +1,6 @@
 // Меню бургер
 $('.btn__menu, header .nav__link').on('click', function () {
-    $(this).toggleClass('active');
-    $('.header .nav, body').toggleClass('active');
+    window.innerWidth < 1100 ? $('.header .nav, body, .btn__menu').toggleClass('tab_active') : '';
 });
 
 function animateNumber(element, to, duration = 3000) {
@@ -22,7 +21,7 @@ function animateNumber(element, to, duration = 3000) {
 
 $('.hero__item-num').each(function () {
     const n = parseInt($(this).data('anim'), 10);
-    animateNumber(this, n, 3000);
+    animateNumber(this, n, 2000);
 });
 
 function scrollChatToBottom() {
@@ -77,7 +76,8 @@ $('.live__navbar').slick({
             breakpoint: 1200,
             settings: {
                 slidesToShow: 1,
-                slidesToScroll: 1
+                slidesToScroll: 1,
+                adaptiveHeight: true
             }
         },
     ]
