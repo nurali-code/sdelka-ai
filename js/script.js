@@ -3,7 +3,7 @@ $('.btn__menu, header .nav__link').on('click', function () {
     window.innerWidth < 1100 ? $('.header .nav, body, .btn__menu').toggleClass('tab_active') : '';
 });
 
-function animateNumber(element, to, duration = 3000) {
+function animateNumber(element, to, duration = 2000) {
     let start = 0;
     let startTime = null;
 
@@ -12,9 +12,7 @@ function animateNumber(element, to, duration = 3000) {
         const progress = Math.min((currentTime - startTime) / duration, 1);
         const value = Math.floor(progress * (to - start) + start);
         $(element).text(value.toLocaleString('ru-RU'));
-        if (progress < 1) {
-            requestAnimationFrame(animate);
-        }
+        if (progress < 1) { requestAnimationFrame(animate); }
     }
     requestAnimationFrame(animate);
 }
@@ -36,7 +34,7 @@ $('.faq__heading').on('click', function () {
     const parent = $(this).closest('.faq-item');
     $('.faq__heading').not(this).removeClass('active').next().slideUp(300);
     $(this).toggleClass('active').next().slideToggle(300);
-    setTimeout(() => {$('.faq-item').not(parent).removeClass('active');}, 300);
+    setTimeout(() => { $('.faq-item').not(parent).removeClass('active'); }, 300);
     parent.toggleClass('active');
 });
 
