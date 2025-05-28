@@ -93,6 +93,14 @@ $('.reviews__slider').slick({
     variableWidth: true,
     responsive: [
         {
+            breakpoint: 1600,
+            settings: {
+                variableWidth: false,
+                cennterPadding: '20px',
+                slidesToShow: 3,
+            }
+        },
+        {
             breakpoint: 1200,
             settings: {
                 variableWidth: false,
